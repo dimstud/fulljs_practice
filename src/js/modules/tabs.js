@@ -3,17 +3,6 @@
 const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
     const header = document.querySelector(headerSelector),
         tab = document.querySelectorAll(tabSelector),
-<<<<<<< HEAD
-        countent = document.querySelector(contentSelector);
-
-    function hideTabContent() {
-
-    }
-
-    function showTabContent() {
-
-    }
-=======
         content = document.querySelectorAll(contentSelector);
 
     function hideTabContent() {
@@ -40,7 +29,6 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
             
         }
     })
->>>>>>> 8205543883c13c236ce3647f8f1403102f60d2dd
 };
 
 export default tabs;
