@@ -17,7 +17,7 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
 
     function showTabContent(i = 0) {
         content[i].style.display = 'block';
-        tab[i].classList.remove(activeClass);
+        tab[i].classList.add(activeClass);
     }
 
     hideTabContent();
@@ -25,7 +25,9 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
 
     header.addEventListener('click', (e) => {
         const target = e.target;
-        if (target.classList.contains(tabSelector.replace(/\./, "")) || target.parentNode.contains(tabSelector.replace(/\./, ""))) {
+        if (target &&
+            (target.classList.contains(tabSelector.replace(/\./, "")) ||
+            target.parentNode.classList.contains(tabSelector.replace(/\./, "")))) {
             tab.forEach((item, i) => {
                 if (target === item || target.parentNode === item) {
                     hideTabContent();
