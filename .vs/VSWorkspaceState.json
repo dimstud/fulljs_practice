@@ -3,9 +3,10 @@
     "",
     "\\dist",
     "\\src",
+    "\\src\\assets",
     "\\src\\js",
     "\\src\\js\\modules"
   ],
-  "SelectedNode": "\\src\\js\\main.js",
+  "SelectedNode": "\\src\\js\\modules\\forms.js",
   "PreviewInSolutionExplorer": false
 }

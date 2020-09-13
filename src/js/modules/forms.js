@@ -1,13 +1,21 @@
 const forms = () => {
     const form = document.querySelectorAll('form'),
-        inputs = document.querySelectorAll('input');
+        inputs = document.querySelectorAll('input'),
+        phoneInputs = document.querySelectorAll('input[name="user_phone"]');
+
+    phoneInputs.forEach(item => {
+        item.addEventListener('input', () => {
+            item.value = item.value.replace(/\D/, '');
+        });
+    })
+
     const message = {
-        loading: 'Çàãðóçêà',
-        success: 'Ñïàñèáî! Ñêîðî ìû ñ âàìè ñâÿæåìñÿ',
-        failure: '×òî-òî ïîøëî íå òàê...'
+        loading: 'Ð—Ð°Ð³Ñ€ÑƒÐ·ÐºÐ°...',
+        success: 'Ð¡Ð¿Ð°ÑÐ¸Ð±Ð¾! Ð¡ÐºÐ¾Ñ€Ð¾ Ð¼Ñ‹ Ñ Ð²Ð°Ð¼Ð¸ ÑÐ²ÑÐ¶ÐµÐ¼ÑÑ',
+        failure: 'Ð§Ñ‚Ð¾-Ñ‚Ð¾ Ð¿Ð¾ÑˆÐ»Ð¾ Ð½Ðµ Ñ‚Ð°Ðº...'
     };
 
-    const postData = async () => {
+    const postData = async (url, data) => {
         document.querySelector('.status').textContent = message.loading;
         let res = await fetch(url, {
             method: "POST",
