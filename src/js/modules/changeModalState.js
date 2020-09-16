@@ -13,12 +13,13 @@ const changeModalState = (state) => {
     function bindActionToElem(event, elem, prop) {
         elem.forEach((item, i) => {
             item.addEventListener(event, () => {
-                if (elem.lenght > 1) {
-                    state[prop] = i;
-                } else {
-                    state[prop] = item.value;
+                switch (item.nodeName) {
+                    case 'SPAN':
+                        console.log('span');
+                        break;
+                    case 'INPUT':
+
                 }
-                console.log(state);
             });
         });
     }
