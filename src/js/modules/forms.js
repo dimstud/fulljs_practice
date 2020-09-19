@@ -5,7 +5,7 @@ const forms = (state) => {
           inputs = document.querySelectorAll('input');
 
     checkNumInputs('input[name="user_phone"]');
-
+    
     const message = {
         loading: 'Загрузка...',
         success: 'Спасибо! Скоро мы с вами свяжемся',
@@ -32,9 +32,9 @@ const forms = (state) => {
         item.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            let stausMessage = document.createElement('div');
-            stausMessage.classList.add('status');
-            item.appendChild(stausMessage);
+            let statusMessage = document.createElement('div');
+            statusMessage.classList.add('status');
+            item.appendChild(statusMessage);
 
             const formData = new FormData(item);
             if (item.getAttribute('data-calc') === "end") {
@@ -43,16 +43,16 @@ const forms = (state) => {
                 }
             }
 
-            postData('assets/server.php', formData) 
+            postData('assets/server.php', formData)
                 .then(res => {
                     console.log(res);
-                    stausMessage.textContent = message.success;
+                    statusMessage.textContent = message.success;
                 })
-                .catch(() => stausMessage.textContent = message.failure)
+                .catch(() => statusMessage.textContent = message.failure)
                 .finally(() => {
                     clearInputs();
                     setTimeout(() => {
-                        stausMessage.remove();
+                        statusMessage.remove();
                     }, 5000);
                 });
         });
