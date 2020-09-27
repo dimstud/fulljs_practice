@@ -1,8 +1,7 @@
 const sliders = (slider, dir, prev, next) => {
     let slideIndex = 1;
-    const items = document.querySelectorAll(slider),
-          prevBtn = document.querySelector(prev),
-          nextBtn = document.querySelector(next);
+    const items = document.querySelectorAll(slider);
+          
     function showSlides(n) {
         if (n > items.length) {
             slideIndex = 1;
@@ -25,6 +24,23 @@ const sliders = (slider, dir, prev, next) => {
     function plusSlides(n) {
         showSlides(slideIndex += n);
     }
+
+    try {
+        const prevBtn = document.querySelector(prev),
+            nextBtn = document.querySelector(next);
+
+        prevBtn.addEventListener('click', () => {
+            plusSlides(-1);
+            items[slideIndex - 1].classList.remove('slideInLeft');
+            items[slideIndex - 1].classList.add('slideInRight');
+        });
+
+        nextBtn.addEventListener('click', () => {
+            plusSlides(1);
+            items[slideIndex - 1].classList.remove('slideInRight');
+            items[slideIndex - 1].classList.add('slideInLeft');
+        });
+    } catch (e) {}
 };
 
 export default sliders;
