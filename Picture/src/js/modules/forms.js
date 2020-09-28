@@ -2,7 +2,8 @@
 
 const forms = () => {
     const form = document.querySelectorAll('form'),
-          inputs = document.querySelectorAll('input');
+          inputs = document.querySelectorAll('input'),
+          upload = document.querySelectorAll('[name="upload"]');
 
     // checkNumInputs('input[name="user_phone"]');
     
@@ -35,6 +36,14 @@ const forms = () => {
         });
     };
 
+    upload.forEach(item => {
+        item.addEventListener('input', () => {
+            console.log(item.files[0]);
+            let dots;
+            item.files[0].name.split('.')[0].lenght > 5 ? dots = "..." : dots = '.';
+        });
+    });
+
     form.forEach(item => {
         item.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -59,7 +68,7 @@ const forms = () => {
 
             const formData = new FormData(item);
             let api;
-            item.closest('.popup-design') ? api = path.designer : api = path.question;
+            item.closest('.popup-design') || item.classList.contains('calc_form') ? api = path.designer : api = path.question;
             console.log(api);
 
             postData(api, formData)
