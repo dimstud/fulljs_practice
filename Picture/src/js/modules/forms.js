@@ -40,7 +40,10 @@ const forms = () => {
         item.addEventListener('input', () => {
             console.log(item.files[0]);
             let dots;
-            item.files[0].name.split('.')[0].lenght > 5 ? dots = "..." : dots = '.';
+            const arr = item.files[0].name.split('.');
+            arr[0].length > 6 ? dots = "..." : dots = '.';
+            const name = arr[0].substring(0, 6) + dots + arr[1];
+            item.previousElementSibling.textContent = name;
         });
     });
 
