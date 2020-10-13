@@ -9,8 +9,21 @@ const scrolling = (upSelector) => {
             upElem.classList.add('fadeOut');
             upElem.classList.remove('fadeIn');
         }
-
     });
+
+    const element = document.documentElement,
+        body = document.body;
+
+    const calcScroll = () => {
+        upElem.addEventListener('click', function () {
+            let scrollTop = Math.round(body.scrollTop || element.scrollTop);
+
+            if (this.hash != '') {
+                event.preventDefault();
+                let hashElement = document.querySelector(this.hash),
+            }
+        });
+    }
 };
 
 export default scrolling;
