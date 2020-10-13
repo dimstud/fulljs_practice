@@ -9,6 +9,7 @@ const scrolling = (upSelector) => {
             upElem.classList.add('fadeOut');
             upElem.classList.remove('fadeIn');
         }
+
     });
 };
 
