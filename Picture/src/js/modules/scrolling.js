@@ -21,6 +21,15 @@ const scrolling = (upSelector) => {
             if (this.hash != '') {
                 event.preventDefault();
                 let hashElement = document.querySelector(this.hash),
+                    hashElementTop = 0;
+
+                while (hashElement.offsetParent) {
+                    hashElementTop += hashElement.offsetTop;
+                    hashElement = hashElement.offsetParent;
+                }
+
+                hashElementTop = Math.round(hashElementTop);
+                smoothScroll(scrollTop, hashElementTop, this.hash);
             }
         });
     }
