@@ -14,7 +14,7 @@
 
     window.addEventListener('resize', () => {
         if (window.screen.availWidth > 992) {
-            menuElem.styte.display = 'none';
+            menuElem.style.display = 'none';
         }
     });
 };

@@ -11,6 +11,7 @@ const scrolling = (upSelector) => {
         }
     });
 
+<<<<<<< HEAD
     // Scrolling with raf
 
     let links = document.querySelectorAll('[href^="#"]'),
@@ -102,6 +103,30 @@ const scrolling = (upSelector) => {
     // };
 
     // calcScroll();
+=======
+    const element = document.documentElement,
+        body = document.body;
+
+    const calcScroll = () => {
+        upElem.addEventListener('click', function () {
+            let scrollTop = Math.round(body.scrollTop || element.scrollTop);
+
+            if (this.hash != '') {
+                event.preventDefault();
+                let hashElement = document.querySelector(this.hash),
+                    hashElementTop = 0;
+
+                while (hashElement.offsetParent) {
+                    hashElementTop += hashElement.offsetTop;
+                    hashElement = hashElement.offsetParent;
+                }
+
+                hashElementTop = Math.round(hashElementTop);
+                smoothScroll(scrollTop, hashElementTop, this.hash);
+            }
+        });
+    }
+>>>>>>> origin/master
 };
 
 export default scrolling;
