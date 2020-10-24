@@ -1,3 +1,5 @@
-import './lib/lib';
+import $ from './lib/lib';
 
-$('.active').removeClass('sasds');
+$('button').on('click', function() {
+    $(this).hide().show().toggleClass('active');
+});
