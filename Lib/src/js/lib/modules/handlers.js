@@ -1,5 +1,5 @@
 import $ from '../core';
-
+// назначает обработчик событий
 $.prototype.on = function(eventName, callback) {
     if (!eventName || !callback) {
         return this;
@@ -10,7 +10,7 @@ $.prototype.on = function(eventName, callback) {
     }
     return this;
 };
-
+// убирает обработчик событийй
 $.prototype.off = function(eventName, callback) {
     if (!eventName || !callback) {
         return this;
@@ -21,7 +21,7 @@ $.prototype.off = function(eventName, callback) {
     }
     return this;
 };
-
+// назначате клик
 $.prototype.click = function(handler) {
     for (let i = 0; i < this.length; i++) {
         if (handler) {

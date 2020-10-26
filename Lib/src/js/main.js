@@ -1,5 +1,7 @@
 import $ from './lib/lib';
 
+// $('.active').removeClass('active');
+
 $('button').on('click', function() {
     $('div').eq(1).toggleClass('active');
 });

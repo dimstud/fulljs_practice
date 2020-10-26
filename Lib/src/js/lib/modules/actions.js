@@ -1,5 +1,5 @@
 import $ from '../core';
-
+// менять и плучать содержимое элемента
 $.prototype.html = function(content) {
     for (let i = 0; i < this.length; i++) {
         if (content) {
@@ -11,7 +11,7 @@ $.prototype.html = function(content) {
 
     return this;
 };
-
+// находит элемет по номеру
 $.prototype.eq = function(i) {
     const swap = this[i];
     const objLength = Object.keys(this).length;
@@ -24,7 +24,7 @@ $.prototype.eq = function(i) {
     this.length = 1;
     return this;
 };
-
+// получить индекс элемента
 $.prototype.index = function() {
     const parent = this[0].parentNode;
     const childs = [...parent.children];
@@ -35,7 +35,7 @@ $.prototype.index = function() {
 
     return childs.findIndex(findMyIndex);
 };
-
+// находит элемент из уже выбранных
 $.prototype.find = function(selector) {
     let numberOfItems = 0;
     let counter = 0;
@@ -65,7 +65,7 @@ $.prototype.find = function(selector) {
 
     return this;
 };
-
+// определяет близжайший блок по заданному селектору
 $.prototype.closest = function(selector) {
     let counter = 0;
 

@@ -1,5 +1,5 @@
 import $ from '../core';
-
+// добавляет класс
 $.prototype.addClass = function(...classNames){
     for (let i = 0; i < this.length; i++) {
         this[i].classList.add(...classNames);
@@ -7,7 +7,7 @@ $.prototype.addClass = function(...classNames){
 
     return this;
 };
-
+// удаляет класс
 $.prototype.removeClass = function(...classNames){
     for (let i = 0; i < this.length; i++) {
         this[i].classList.remove(...classNames);
@@ -15,7 +15,7 @@ $.prototype.removeClass = function(...classNames){
 
     return this;
 };
-
+// переключатель
 $.prototype.toggleClass = function(classNames){
     for (let i = 0; i < this.length; i++) {
         this[i].classList.toggle(classNames);

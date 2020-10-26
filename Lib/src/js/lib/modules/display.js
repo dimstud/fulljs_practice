@@ -1,5 +1,5 @@
 import $ from '../core';
-
+// показывает элемент
 $.prototype.show = function() {
     for(let i = 0; i < this.length; i++) {
         if (!this[i].style) {
@@ -10,7 +10,7 @@ $.prototype.show = function() {
 
     return this;
 };
-
+// скрывает элемент
 $.prototype.hide = function() {
     for(let i = 0; i < this.length; i++) {
         if (!this[i].style) {
@@ -21,7 +21,7 @@ $.prototype.hide = function() {
 
     return this;
 };
-
+// переключает элемент
 $.prototype.toggle = function() {
     for(let i = 0; i < this.length; i++) {
         if (!this[i].style) {
