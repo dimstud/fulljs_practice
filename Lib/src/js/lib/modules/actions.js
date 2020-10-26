@@ -71,6 +71,9 @@ $.prototype.closest = function(selector) {
 
     for (let i = 0; i < this.length; i++) {
         this[i] = this[i].closest(selector);
+        if (this[i] === null) {
+            break;
+        }
         counter++;
     }
 
