@@ -65,7 +65,7 @@ $.prototype.find = function(selector) {
 
     return this;
 };
-// определяет близжайший блок по заданному селектору
+// определяет близжайший блок по заданному селектору родителя
 $.prototype.closest = function(selector) {
     let counter = 0;
 
@@ -81,7 +81,7 @@ $.prototype.closest = function(selector) {
 
     return this;
 };
-
+// получение соседнего элемента внутри родительского блока
 $.prototype.siblings = function() {
     let numberOfItems = 0;
     let counter = 0;
