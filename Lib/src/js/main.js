@@ -16,6 +16,6 @@ import $ from './lib/lib';
 // console.log($('.more').eq(0).siblings());
 // console.log($('.findme').siblings());
 // $('button').fadeOut(1800);
- $('button').fadeIn(1800);
+//  $('button').fadeIn(1800);
 
 // console.log($('button').html('Hello'));
