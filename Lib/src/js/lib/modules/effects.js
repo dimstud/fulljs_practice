@@ -1,5 +1,5 @@
 import $ from '../core';
-
+// (время, после запуска, после отработки анимации)
 $.prototype.animateOverTime = function(dur, cb, fin) {
     let timeStart;
 
@@ -24,7 +24,7 @@ $.prototype.animateOverTime = function(dur, cb, fin) {
 
     return _animateOverTime;
 };
-
+// функция для показа анимации на стр.(скорость воспроизвед аним, показ, заканч функц)
 $.prototype.fadeIn = function(dur, display, fin) {
     for (let i = 0; i < this.length; i++) {
         this[i].style.display = display || 'block';
