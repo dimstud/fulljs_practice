@@ -44,3 +44,36 @@ $('button').eq(2).on('click', () => {
 // </div>
 // `);
 // $('.dropdown-toggle').dropdown();
+
+$('#trigger').click(() => $('#trigger').createModal({
+    text: {
+        title: 'Modal title',
+        body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore voluptatem eaque ea nihil iste deleniti saepe quas, suscipit quibusdam pariatur, dolorem minima sint excepturi doloribus, facere odio non! Non, fugiat!'
+    },
+    btns: {
+        count: 3,
+        settings: [
+            [
+                'Close',
+                ['btn-danger', 'mr-10'],
+                true
+            ],
+            [
+                'Save changes',
+                ['btn-success'],
+                false,
+                () => {
+                    alert('Данные сохранены');
+                }
+            ],
+            [
+                'Another btn',
+                ['btn-warning', 'ml-10'],
+                false,
+                () => {
+                    alert('Hello World');
+                }
+            ]
+        ]
+    }
+}));
